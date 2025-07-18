@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Windows Settings MCP Server",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/WindowsSettingsMCP.Server/bin/Debug/net8.0-windows/WindowsSettingsMCP.Server.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        }
+    ]
+}

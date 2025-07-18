@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "people": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": ["run", "--project", "c:\\Users\\Evans\\Documents\\Projects\\WindowsSettingsMCP\\src\\WindowsSettingsMCP.Server\\WindowsSettingsMCP.Server.csproj", "--no-build"]
+    }
+  }
+}
