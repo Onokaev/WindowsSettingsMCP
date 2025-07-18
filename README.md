@@ -135,32 +135,30 @@ This server implements the Model Context Protocol and communicates via JSON-RPC 
 
 ## MCP Client Configuration
 
-### GitHub Copilot Chat
+### VS Code MCP Extension
 
-To use this server with GitHub Copilot Chat, use the `mcp.json` configuration:
+This project includes an MCP configuration file at `.vscode/mcp.json` for use with VS Code MCP extensions:
 
 ```json
 {
-  "mcpServers": {
-    "windows-settings": {
+  "servers": {
+    "settings": {
+      "type": "stdio",
       "command": "dotnet",
-      "args": [
-        "run",
-        "--project",
-        "src/WindowsSettingsMCP.Server/WindowsSettingsMCP.Server.csproj"
-      ],
-      "cwd": "c:\\Users\\Evans\\Documents\\Projects\\WindowsSettingsMCP",
-      "env": {
-        "DOTNET_ENVIRONMENT": "Production"
-      }
+      "args": ["run", "--project", "c:\\Users\\Evans\\Documents\\Projects\\WindowsSettingsMCP\\src\\WindowsSettingsMCP.Server\\WindowsSettingsMCP.Server.csproj", "--no-build"]
     }
   }
 }
 ```
 
+**Note**: Make sure to build the project first before using the `--no-build` flag:
+```powershell
+dotnet build src/WindowsSettingsMCP.Server/WindowsSettingsMCP.Server.csproj
+```
+
 ### Claude Desktop
 
-For Claude Desktop, copy the content of `claude_desktop_config.json` to your Claude Desktop configuration file (typically located at `%APPDATA%\Claude\claude_desktop_config.json`):
+For Claude Desktop, copy this configuration to your Claude Desktop configuration file (typically located at `%APPDATA%\Claude\claude_desktop_config.json`):
 
 ```json
 {
